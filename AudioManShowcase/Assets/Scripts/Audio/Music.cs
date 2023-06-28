@@ -2,6 +2,16 @@
 using UnityEngine;
 
 /// <summary>
+/// What to do when there's a new measure
+/// </summary>
+public enum ActionsOnNewMeasure
+{
+	nothing,
+	start,
+	stop
+}
+
+/// <summary>
 /// Music tracks for MusicEngine, use (music).source.[...] for changing the sound on runtime.
 /// </summary>
 [System.Serializable]
@@ -57,5 +67,5 @@ public class Music {
     public bool isPlaying;
 
 	[HideInInspector]
-	public bool startOnNewMeasure = false;
+	public ActionsOnNewMeasure onNewMeasure = ActionsOnNewMeasure.nothing;
 }
